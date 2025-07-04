@@ -1,0 +1,11 @@
+.banner {
+  width: 100%;
+  height: 70vh;
+  border: 4px solid rgb(243, 15, 15);
+}
+.banner-content {
+  width: 100%;
+  height: 100%;
+  border: 4px solid rgb(66, 207, 10);
+
+}
