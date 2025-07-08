@@ -1,11 +1,101 @@
-.banner {
-  width: 100%;
-  height: 70vh;
-  border: 4px solid rgb(243, 15, 15);
+.banner-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--color-banner-bg, linear-gradient(90deg, #e3f2fd 0%, #90caf9 100%));
+  padding: 2rem 3rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 24px rgba(33, 150, 243, 0.15);
+  margin: 2rem auto;
+  max-width: 900px;
+  min-height: 180px;
 }
-.banner-content {
-  width: 100%;
-  height: 100%;
-  border: 4px solid rgb(66, 207, 10);
 
+.banner-content {
+  flex: 1;
+}
+
+.banner-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-banner-title, #0d47a1);
+  margin: 0 0 0.5rem 0;
+  letter-spacing: 1px;
+}
+
+.banner-subtitle {
+  font-size: 1.25rem;
+  color: var(--color-banner-subtitle, #1565c0);
+  margin: 0;
+}
+
+.banner-plane {
+  flex-shrink: 0;
+  margin-left: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.banner-plane svg {
+  width: 120px;
+  height: auto;
+  transition: transform 0.3s;
+}
+
+.banner-plane svg:hover {
+  transform: scale(1.08) rotate(-2deg);
+}
+
+@media (max-width: 700px) {
+  .banner-container {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.5rem 1rem;
+    min-height: 120px;
+  }
+  .banner-plane {
+    margin-left: 0;
+    margin-top: 1rem;
+  }
+  .banner-title {
+    font-size: 2rem;
+  }
+  .banner-subtitle {
+    font-size: 1rem;
+  }
+}
+
+.banner-bg-image {
+  background-image: linear-gradient(rgba(13, 71, 161, 0.45), rgba(21, 101, 192, 0.35)), url('/look-outside.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+
+.banner-bg-image .banner-content,
+.banner-bg-image .banner-plane {
+  position: relative;
+  z-index: 1;
+}
+
+.banner-bg-image::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(25, 118, 210, 0.45), rgba(25, 118, 210, 0.35)); /* fallback */
+  background: linear-gradient(rgba(var(--color-accent-rgb, 25,118,210), 0.45), rgba(var(--color-accent-rgb, 25,118,210), 0.35));
+  z-index: 0;
+  pointer-events: none;
+}
+
+.banner-bg-image .banner-title,
+.banner-bg-image .banner-subtitle {
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+
+.banner-bg-image .banner-plane svg {
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.18));
 }
