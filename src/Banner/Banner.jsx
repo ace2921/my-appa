@@ -1,51 +1,24 @@
-import React, { useState } from 'react'
-import './Banner.css'
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-
-const flightImages = [
-  'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80',
-  'https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?auto=format&fit=crop&w=600&q=80',
-  'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80',
-  'https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=600&q=80',
-];
+import React from 'react';
+import './Banner.css';
 
 const Banner = () => {
-  const [from, setFrom] = useState('');
-  const [to, setTo] = useState('');
-  const [date, setDate] = useState('');
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert(`Searching flights from ${from} to ${to} on ${date}`);
-  };
-
   return (
-    <div className='banner'>
-      <div className='banner-content'>
-        <Swiper
-          spaceBetween={16}
-          slidesPerView={1}
-          loop={true}
-          className='flight-swiper'
-        >
-          {flightImages.map((src, idx) => (
-            <SwiperSlide key={idx}>
-              <img src={src} alt={`Flight option ${idx + 1}`} className='flight-image' />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-        <h1 className='banner-title'>Find Your Next Adventure</h1>
-        <p className='banner-description'>Book the best flights at unbeatable prices!</p>
-        <form className='flight-form' onSubmit={handleSubmit}>
-          <input type='text' placeholder='From' className='flight-input' value={from} onChange={e => setFrom(e.target.value)} />
-          <input type='text' placeholder='To' className='flight-input' value={to} onChange={e => setTo(e.target.value)} />
-          <input type='date' className='flight-input' value={date} onChange={e => setDate(e.target.value)} />
-          <button type='submit' className='flight-search-btn'>Search Flights</button>
-        </form>
+    <div className="banner-container banner-bg-image">
+      <div className="banner-content">
+        <h1 className="banner-title">Fly High with SkyHigh Airlines</h1>
+        <p className="banner-subtitle">Experience the world from above – Book your next adventure today!</p>
+      </div>
+      <div className="banner-plane">
+        <svg width="120" height="60" viewBox="0 0 120 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="10" y="25" width="70" height="10" rx="5" fill="#2196f3"/>
+          <polygon points="80,30 110,20 110,40" fill="#1976d2"/>
+          <rect x="15" y="20" width="10" height="20" rx="3" fill="#90caf9"/>
+          <rect x="60" y="20" width="8" height="20" rx="3" fill="#90caf9"/>
+          <rect x="5" y="28" width="8" height="4" rx="2" fill="#1976d2"/>
+        </svg>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Banner
+export default Banner;
