@@ -13,7 +13,7 @@ const Home = () => {
       <li><a href="#contact">Contact</a></li>
       <li><a href="#about">About</a></li>
       <span role="img" aria-label="airplane" className="thefooter-logo">✈️</span>
-      <span className="thefooter-title">SkyHigh Airlines</span>
+      <span className="thefooter-title">SkyHigh Airlines Aviation</span>
 
     </ul>
   
