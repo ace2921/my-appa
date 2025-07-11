@@ -7,3 +7,11 @@
   width: 100%;
   height: 100%;
 }
+
+.flight-text{
+  padding-left: 37%;
+  padding-top: 2%;
+  font-size: 1.5rem;
+  font-family: sans-serif;
+}
+
