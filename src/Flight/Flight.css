@@ -33,6 +33,7 @@
    background-image: url('../../public/look-outside.webp');
    background-repeat: no-repeat;
    background-size: cover;
+   
 }
 
 
@@ -74,9 +75,9 @@
 .flight-infothr{
    border: 2px solid grey;
   width: 27%;
-  height: 60vh;
+  height: 61vh;
   margin-left: 68%;
-  margin-top: -27%;
+  margin-top: -27.2%;
    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
    border-radius: 2%;
    background-image: url(../../public/image\ copy.png);
